@@ -9,7 +9,8 @@ window.onload = function() {
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
         // Обработка данных
-        let totalDeposit = 0;
+        let grossDeposit = 0;
+        let grossWithdrawal = 0; // Добавляем переменную для общей суммы выводов
         let cryptoTotal = 0;
         let roobicTotal = 0;
 
@@ -30,19 +31,23 @@ window.onload = function() {
             }
 
             if (depositWithdrawal === 'Deposit') {
-                totalDeposit += amount;
-            } 
+                grossDeposit += amount;
+            } else if (depositWithdrawal === 'Withdrawal') { // Добавляем условие для выводов
+                grossWithdrawal += amount;
+            }
         }
+        
+        const netDeposit = grossDeposit - grossWithdrawal; // Вычисляем чистый депозит
 
-        const cryptoPercentage = ((cryptoTotal / totalDeposit) * 100).toFixed(0);
-        const roobicPercentage = ((roobicTotal / totalDeposit) * 100).toFixed(0);
+        const cryptoPercentage = ((cryptoTotal / grossDeposit) * 100).toFixed(0);
+        const roobicPercentage = ((roobicTotal / grossDeposit) * 100).toFixed(0);
 
-        console.log(totalDeposit);
+        console.log(grossDeposit);
         console.log(cryptoTotal);
         console.log(roobicTotal);
 
         // Отображение результатов на странице
-        document.getElementById('netDeposit').innerText = '$' + totalDeposit.toFixed(0);
+        document.getElementById('netDeposit').innerText = '$' + netDeposit.toFixed(0); // Отображаем чистый депозит
         document.getElementById('cryptoPercentage').innerText = '₿' + cryptoPercentage + '%';
         document.getElementById('roobicPercentage').innerText = 'R' + roobicPercentage + '%';
     })
