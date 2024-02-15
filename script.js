@@ -52,4 +52,8 @@ window.onload = function() {
         document.getElementById('roobicPercentage').innerText = 'R' + roobicPercentage + '%';
     })
     .catch(error => console.error(error));
+
+    // Загрузка данных и обновление страницы при загрузке и каждый час
+    loadDataAndRefresh(); // Выполняем сразу после загрузки страницы
+    setInterval(loadDataAndRefresh, 3600000); // 3600000 миллисекунд = 1 час
 };
