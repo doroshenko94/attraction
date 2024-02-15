@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('background.png'); /* Путь к вашему изображению */
+    background-size: cover;
+}
+
+#content {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+#netDeposit {
+    margin-top: 230px;
+    text-align: center; 
+    margin-left: -160px;
+    font-size: 34px;
+    font-weight: bold;
+    animation: glow-netDeposit 1s infinite alternate;
+}
+
+#cryptoPercentage {
+    text-align: center; 
+    margin-top: 150px; /* Отступ сверху */
+    margin-left: -150px; /* Отступ слева */
+    font-size: 34px;
+    font-weight: bold;
+    animation: glow-cryptoPercentage 1s infinite alternate;
+}
+
+#roobicPercentage {
+    text-align: center; 
+    margin-top: 100px; /* Отступ сверху */
+    margin-left: -150px; /* Отступ слева */
+    font-size: 34px;
+    font-weight: bold;
+    animation: glow-roobicPercentage 1s infinite alternate;
+}
+
+@keyframes glow-netDeposit {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 60px #ff00de, 0 0 100px #ff00de, 0 0 120px #ff00de, 0 0 140px #ff00de, 0 0 200px #ff00de;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 80px #ff00de, 0 0 150px #ff00de, 0 0 200px #ff00de, 0 0 250px #ff00de, 0 0 300px #ff00de;
+    }
+}
+
+@keyframes glow-cryptoPercentage {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 60px #00ffcc, 0 0 100px #00ffcc, 0 0 120px #00ffcc, 0 0 140px #00ffcc, 0 0 200px #00ffcc;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 80px #00ffcc, 0 0 150px #00ffcc, 0 0 200px #00ffcc, 0 0 250px #00ffcc, 0 0 300px #00ffcc;
+    }
+}
+
+@keyframes glow-roobicPercentage {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 60px #ffcc00, 0 0 100px #ffcc00, 0 0 120px #ffcc00, 0 0 140px #ffcc00, 0 0 200px #ffcc00;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ffcc00, 0 0 40px #ffcc00, 0 0 80px #ffcc00, 0 0 150px #ffcc00, 0 0 200px #ffcc00, 0 0 250px #ffcc00, 0 0 300px #ffcc00;
+    }
+}
+
